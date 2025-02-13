@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+
+    <!-- This is HTML section -->
+     <h2> Welcome to Improved Rock-Paper-Scissor Game Using Functions</h2>
+
+     <button onclick="
+        yourPick = 1;
+        computerPick = Math.ceil(Math.random()*3);
+        chooseWinner(yourPick,computerPick);
+     ">Rock</button>
+
+     <button onclick="
+        yourPick = 2;
+        computerPick = Math.ceil(Math.random()*3);
+        chooseWinner(yourPick,computerPick);
+     ">Paper</button>
+
+     <button onclick="
+        yourPick = 3;
+        computerPick = Math.ceil(Math.random()*3);
+        chooseWinner(yourPick,computerPick);
+     ">Scissors</button>
+
+
+     <!-- This is script section -->
+    <script>
+        let yourPick;
+        let computerPick;
+
+        function chooseWinner(yourPick,computerPick){
+            if(yourPick==computerPick)
+            alert('Match tied');
+            else if(yourPick-computerPick == -2 || yourPick-computerPick == 1)
+            alert('You won');
+            else
+            alert('You lost');
+        }
+        
+
+    </script>
+</body>
+</html>

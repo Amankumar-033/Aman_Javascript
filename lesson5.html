@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+
+    <!-- This is html part -->
+    <button onclick="
+        console.log(`Cart Qunatity : ${cartQuantity}`);
+    ">Show quantity</button>
+
+    <button onclick="
+        cartQuantity += 1;
+        console.log(`Cart Qunatity : ${cartQuantity}`); 
+    ">Add to Cart</button>
+
+    <button onclick="
+        cartQuantity += 2;
+        console.log(`Cart Qunatity : ${cartQuantity}`);
+    ">+2</button>
+
+    <button onclick="
+        cartQuantity += 3;
+        console.log(`Cart Qunatity : ${cartQuantity}`);
+    ">+3</button>
+
+    <button onclick="
+        cartQuantity += 4;
+        console.log(`Cart Qunatity : ${cartQuantity}`);
+    ">+4</button>
+
+    <button onclick="
+        cartQuantity = 0;
+        console.log('Cart was reset');
+        console.log(`Cart Qunatity : ${cartQuantity}`);
+    ">Reset Cart</button>
+
+
+
+    
+
+    <!-- This is javascript part -->
+    <script>
+        /*
+        let name = "Aman";
+        console.log(`My name is ${name}`);
+
+        let cost = 1*5 + 2*3 + 1*9;
+        console.log(`Cost of food: $${cost}`);
+
+        let tax = cost*0.1;
+        console.log(`Tax(10%): $${tax}`);
+
+        let totalCost = cost + tax;
+        console.log(`Total cost: $${totalCost}`);
+    */
+
+    let cartQuantity = 0;
+    </script>
+</body>
+</html>

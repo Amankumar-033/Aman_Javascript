@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+
+        /* 
+        First problem
+        function greet(name){
+            if(name)
+            console.log(`Hello ${name}`);
+            else
+            console.log(`Hello there`);
+        }
+
+        greet('aman'); 
+        */
+
+        
+       
+        function convertToFahrenheit(celsius){
+            let fahrenheit = (celsius* 9/5) + 32;
+            return fahrenheit;
+        }
+
+        function convertToCelsius(fahrenheit){
+            let celsius = (fahrenheit-32) * 5/9;
+            return celsius;
+        }
+
+        function convertTemprature(temp,scale){
+            if(scale == 'F')
+            return convertToFahrenheit(temp);
+            else
+            return convertToCelsius(temp); 
+        }
+
+        console.log(convertTemprature(86,'C'));
+        
+
+    </script>
+</body>
+</html>

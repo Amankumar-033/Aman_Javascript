@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-paper-Scissors</title>
+</head>
+<body>
+
+    <!-- This is HTML portion -->
+    <h3> Welcome to Rock-Paper-Scissors Game </h3>
+
+    <button onclick="
+        let rand1 = Math.ceil(Math.random()*3);
+        if(rand1==1)
+        alert('You choose rock , Computer choose rock : Match tied');
+        else if(rand1==2)
+        alert('You choose rock , Computer choose paper : You lost');
+        else
+        alert('You choose rock , Computer choose scissor : You win'); 
+    ">Rock</button>
+
+    <button onclick="
+        let rand2 = Math.ceil(Math.random()*3);
+        if(rand2==1)
+        alert('You choose paper , Computer choose rock : You win');
+        else if(rand2==2)
+        alert('You choose paper , Computer choose paper : Match tied');
+        else
+        alert('You choose paper , Computer choose scissor : You lost');  
+    ">Paper</button>
+
+    <button onclick="
+        let rand3 = Math.ceil(Math.random()*3);
+        if(rand1==1)
+        alert('You choose scissor , Computer choose rock : You lost');
+        else if(rand1==2)
+        alert('You choose scissor , Computer choose paper : You win');
+        else
+        alert('You choose scissor , Computer choose scissor : Match tied'); 
+    ">Scissors</button>
+
+
+
+
+    <!-- This is script portion -->
+    <script>
+        //1 for rock
+        //2 for paper
+        //3 for scissor
+
+        //1-1 : tie     //2-1 : win     //3-1 : lost
+        //1-2 : lost    //2-2 : paper   //3-2 : win
+        //1-3 : win     //2-3 : lost    //3-3:  tie
+    </script>
+</body>
+</html>

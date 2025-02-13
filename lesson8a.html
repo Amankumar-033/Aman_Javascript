@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+
+    <!-- This is HTML portion -->
+    <h1>Welcome to the Game</h1>
+
+    <button onclick="
+        playGame('rock');
+    ">Rock</button>
+
+    <button onclick="
+        playGame('paper');
+    ">Paper</button>
+
+    <button onclick="
+        playGame('Scissor');
+    ">Scissor</button>
+
+    <button onclick="
+        resetGame();
+    ">Reset Score</button>
+
+
+    <!-- This is script portion -->
+    <script>
+
+
+        let userScore = JSON.parse(localStorage.getItem('score'));
+        if(userScore===null){
+            userScore = {
+                win:0,
+                lose:0,
+                tie:0,
+            };
+        }
+
+
+        function compChoice(){
+            let randomNumber = Math.ceil(Math.random()*3);
+            let computerChoice = '';
+            if(randomNumber==1)
+            return 'rock';
+            else if(randomNumber==2)
+            return 'paper';
+            else
+            return 'Scissor'; 
+        }
+
+
+        function updateScore(userChoice,computerChoice){
+            if(userChoice==computerChoice){
+                userScore.tie+=1;
+                alert(`Match tied \n Win: ${userScore.win} Lose: ${userScore.lose} Tie: ${userScore.tie}`);
+            }
+            else if(userChoice=='rock' && computerChoice=='scissor' || 
+            userChoice=='paper' && computerChoice=='rock' || userChoice=='scissor' && computerChoice=='paper'){
+                userScore.win+=1;
+                alert(`You win \n Win: ${userScore.win} Lose: ${userScore.lose} Tie: ${userScore.tie}`);
+            }
+            else{
+                userScore.lose+=1;
+                alert(`You lost \n Win: ${userScore.win} Lose: ${userScore.lose} Tie: ${userScore.tie}`); 
+            }
+
+            localStorage.setItem('score',JSON.stringify(userScore));
+        }
+
+
+        function playGame(userChoice){
+           
+            let computerChoice = compChoice();
+
+            updateScore(userChoice,computerChoice);
+        }
+
+
+        function resetGame(){
+            localStorage.setItem('score',JSON.stringify(userScore));
+
+            userScore.win = 0;
+            userScore.lose = 0;
+            userScore.tie = 0;
+        }
+
+    </script>
+</body>
+</html>
